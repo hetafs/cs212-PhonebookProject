@@ -43,7 +43,7 @@ public class main {
           case 3:
         	  Contact c = new Contact();
               System.out.print("Enter the contact\'s name: ");
-              c.name = input.nextLine();
+              c.contactName = input.nextLine();
         	  Phonebook.DeleteContact(c);
         	  break;
               
