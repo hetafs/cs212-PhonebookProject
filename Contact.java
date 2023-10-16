@@ -2,43 +2,40 @@ package cs212_phonebookProject;
 
 
 public class Contact implements Comparable<Contact> {
-    String name;
-    String phoneNumber;
-    String emailAddress;
-    String address;
-    String birthday; 
-    String notes;
+    String contactName;
+    String contactPhonenumber;
+    String contactEmailaddress;
+    String contactAddress;
+    String contactBirthday; 
+    String contactNotes;
     LinkedList<Event> events ; 
    
     public Contact() {
-       name = "";
-        phoneNumber = "";
-        emailAddress = "";
-        address = "";
-        birthday = "";
-        notes = "";
+        contactName = "";
+        contactPhonenumber = "";
+        contactEmailaddress = "";
+        contactAddress ="";
+        contactBirthday = "";
+        contactNotes = "";
         events = new LinkedList<Event>();
     }
 
-    public Contact(String name, String phonenumber, String emailaddress, String address, String birthday, String notes) {
-        this.name = name;
-        this.phoneNumber = phonenumber;
-        this.emailAddress = emailaddress;
-        this.address = address;
-        this.birthday =birthday;
-        this.notes = notes;
+   public Contact(String ContactName, String ContactPhonenumber, String ContactEmailaddress, String ContactAddress, String ContactBirthday, String ContactNotes) {
+        this.contactName = ContactName;
+        this.contactPhonenumber = ContactPhonenumber;
+        this.contactEmailaddress = ContactEmailaddress;
+        this.contactAddress = ContactAddress;
+        this.contactBirthday = ContactBirthday;
+        this.contactNotes = ContactNotes;
         events = new LinkedList<Event>();
     }
 
     @Override
-    public String toString() { 
-        return "\nName: " + name +
-                "\nPhone Number: " + phoneNumber +
-                "\nEmail Address: " + phoneNumber +
-                "\nAddress: " +  address +
-                "\nBirthday: " + birthday +
-                "\nNotes: " + notes + "\n";
+
+    public String toString() {
+        return "Contact{" + "ContactName=" + contactName + ", ContactPhonenumber=" + contactPhonenumber + ", ContactEmailaddress=" + contactEmailaddress + ", ContactAddress=" + contactAddress + ", ContactBirthday=" + contactBirthday + ", ContactNotes=" + contactNotes+'}';
     }
+    
     
     public boolean hasConflict(Event e) {//this method will check if event has conflict 
   	  
@@ -95,14 +92,10 @@ public class Contact implements Comparable<Contact> {
     }///i remove if statment for search since there is a one on the remove() method 
     
     
-    
+    //The Contact class should implement the Comparable interface contacts can be sorted by name
     @Override
-    public int compareTo(Contact o) {
-       
-            return (this.name.compareTo(o.name));
-        
-     
-    }
+    public int compareTo(Contact AnotherContact) {
+        return contactName.compareTo(AnotherContact.contactName);}
 
 
 
