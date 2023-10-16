@@ -17,7 +17,7 @@ public class Phonebook {
     public static void AddContact(){
     	   Contact c = new Contact();
            System.out.println("Enter the contact\'s name: ");
-           c.name = input.nextLine();
+           c.contactName = input.nextLine();
         
         if (!contacts.empty() && contacts.search(c))
         {
@@ -25,14 +25,14 @@ public class Phonebook {
                 return;
         }
         System.out.print("Enter the contact's phone number:");
-        c.phoneNumber = input.nextLine();
+        c.contactPhonenumber = input.nextLine();
         
         if (!contacts.empty())
         {
             contacts.findFirst();
             for (int i = 0; i < contacts.size ; i++)
             {
-                    if (contacts.retrieve().phoneNumber.compareTo(c.phoneNumber) == 0)
+                    if (contacts.retrieve().contactPhonenumber.compareTo(c.contactPhonenumber) == 0)
                     {
                             System.out.println("Contact found!");
                             return;
@@ -41,16 +41,16 @@ public class Phonebook {
             }
         }    
         System.out.print("Enter the contact's email address: ");
-        c.emailAddress = input.nextLine();
+        c.contactEmailaddress = input.nextLine();
         
         System.out.print("Enter the contact's address: ");
-        c.address = input.nextLine();
+        c.contactAddress = input.nextLine();
         
         System.out.print("Enter the contact's birthday: ");
-        c.birthday =input.nextLine();
+        c.contactBirthday =input.nextLine();
         
         System.out.print("Enter any notes for the contact: ");
-        c.notes = input.nextLine();
+        c.contactNotes = input.nextLine();
         
         if (contacts.insertSort(c))
             System.out.println("Contact added successfully!");
@@ -74,7 +74,7 @@ public class Phonebook {
                     
                     for (int i = 0; i < contacts.size ; i++)
                     {
-                        if (contacts.retrieve().name.compareTo(name) == 0)
+                        if (contacts.retrieve().contactName.compareTo(name) == 0)
                         {
                             System.out.println("Contact found!");
                             System.out.println(contacts.retrieve());
@@ -92,7 +92,7 @@ public class Phonebook {
                    
                     for (int i = 0; i < contacts.size ; i++)
                     {
-                        if (contacts.retrieve().phoneNumber.compareTo(phonenumber) == 0)
+                        if (contacts.retrieve().contactPhonenumber.compareTo(phonenumber) == 0)
                         {
                             System.out.println("Contact found!");
                             System.out.println(contacts.retrieve());
@@ -111,7 +111,7 @@ public class Phonebook {
                    
                     for (int i = 0; i < contacts.size ; i++)
                     {
-                        if (contacts.retrieve().emailAddress.compareTo(emailaddress) == 0)
+                        if (contacts.retrieve().contactEmailaddress.compareTo(emailaddress) == 0)
                         {
                             System.out.println("Contact found!");
                             System.out.println(contacts.retrieve());
@@ -128,7 +128,7 @@ public class Phonebook {
                    
                     for (int i = 0; i < contacts.size ; i++)
                     {
-                        if (contacts.retrieve().address.compareTo(address) == 0)
+                        if (contacts.retrieve().contactAddress.compareTo(address) == 0)
                         {
                             System.out.println("Contact found!");
                             System.out.println(contacts.retrieve());
@@ -145,7 +145,7 @@ public class Phonebook {
                    
                     for (int i = 0; i < contacts.size ; i++)
                     {
-                        if (contacts.retrieve().birthday.compareTo(birthday) == 0)
+                        if (contacts.retrieve().contactBirthday.compareTo(birthday) == 0)
                         {
                             System.out.println("Contact found!");
                             System.out.println(contacts.retrieve());
@@ -179,7 +179,7 @@ public class Phonebook {
                         if (events.search(e))
                         {
                             Event Update_Event = events.retrieve();
-                            Update_Event.removeContact(c.name);
+                            Update_Event.removeContact(c.contactName);
                             if (Update_Event.contacts_names.empty())
                             {
                                 events.remove(e);
@@ -211,7 +211,7 @@ public class Phonebook {
         e.title = input.nextLine();
         
         System.out.print("Enter contact name: ");
-        c.name = input.nextLine();
+        c.contactName = input.nextLine();
         
         if ( ! contacts.empty() && contacts.search(c) == true)
         {
@@ -234,14 +234,14 @@ public class Phonebook {
                             && (eventFound.time.compareTo(e.time)== 0 ) 
                             && (eventFound.location.compareTo(e.location)== 0 ))
                     {
-                        eventFound.contacts_names.insertSort(c.name);
+                        eventFound.contacts_names.insertSort(c.contactName);
                         events.update(eventFound);
                         event_Updated = true;
                     }
                 }
                 if (! event_Updated)  
                 {
-                    e.contacts_names.insertSort(c.name);
+                    e.contacts_names.insertSort(c.contactName);
                     events.insertSort(e);
                 }
                 System.out.println("Event scheduled successfully!   ");
@@ -263,7 +263,7 @@ public class Phonebook {
             {
                 Contact c = new Contact();
                 System.out.print("Enter the contact name :  ");
-                c.name = input.nextLine();
+                c.contactName = input.nextLine();
                         
                 if (! contacts.empty() )
                 {
@@ -320,14 +320,14 @@ public class Phonebook {
          contacts.findFirst();
         for ( int i = 0 ; i < contacts.size ; i++)
         {
-            String name = contacts.retrieve().name;
+            String name = contacts.retrieve().contactName;
              
              */
         contacts.findFirst();
         for ( int i = 0 ; i < contacts.size ; i++)
         {
     
-            String name = contacts.retrieve().name;
+            String name = contacts.retrieve().contactName;
             String [] firstName = name.split(" ");
 
 
