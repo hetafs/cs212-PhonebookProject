@@ -16,21 +16,29 @@ public class Phonebook {
     // 1. Add a contact
     public static void AddContact(){
     	   Contact c = new Contact();
+        
            System.out.println("Enter the contact\'s name: ");
            c.contactName = input.nextLine();
+        
+        //we hava to check if the Contact is alrady exists  
         
         if (!contacts.empty() && contacts.search(c))
         {
                 System.out.println("Contact found!");
                 return;
         }
+        
         System.out.print("Enter the contact's phone number:");
         c.contactPhonenumber = input.nextLine();
         
         if (!contacts.empty())
         {
-            contacts.findFirst();
-            for (int i = 0; i < contacts.size ; i++)
+            
+          contacts.findFirst();
+            
+            int p =contacts.size 
+            
+            for (int i = 1; i <= p ; i++)
             {
                     if (contacts.retrieve().contactPhonenumber.compareTo(c.contactPhonenumber) == 0)
                     {
@@ -60,10 +68,12 @@ public class Phonebook {
     //2. Search for a contact
     public static void SearchContact(int n){
         int ch = n;
+        //check if the list was empty ...it is not exists
         if (contacts.empty())
             System.out.println("Contact not found!");
         else
         {
+            //for Searching we start from The beginning
             contacts.findFirst();
             switch ( ch )
            {
